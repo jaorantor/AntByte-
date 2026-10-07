@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AntByte</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- LOADING SCREEN -->
+    <div id="loadingScreen">
+        <div class="loader-logo">A</div>
+        <div class="loading-title">ANTBYTE</div>
+        <div class="loading-bar">
+            <div id="loadingProgress"></div>
+        </div>
+        <div class="loading-text">Loading AntByte...</div>
+    </div>
+
+
+    <!-- MAIN PLATFORM -->
+    <div id="platform" class="hidden">
+
+        <!-- TOP BAR -->
+        <header class="topbar">
+
+            <div class="brand">
+                <div class="brand-mark">A</div>
+
+                <div class="brand-text">
+                    <strong>ANTBYTE</strong>
+                    <span>Application Platform</span>
+                </div>
+            </div>
+
+
+            <nav class="main-nav">
+                <button class="nav-button active" data-page="store">
+                    STORE
+                </button>
+
+                <button class="nav-button" data-page="apps">
+                    APPS
+                </button>
+
+                <button class="nav-button" data-page="library">
+                    LIBRARY
+                </button>
+
+                <button class="nav-button" data-page="about">
+                    ABOUT
+                </button>
+            </nav>
+
+
+            <div class="top-actions">
+
+                <div class="search-box">
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Search AntByte..."
+                    >
+
+                    <button id="searchButton">
+                        🔍
+                    </button>
+                </div>
+
+                <button class="profile-button" id="profileButton">
+                    A
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <!-- PAGE CONTENT -->
+        <main>
+
+            <!-- STORE -->
+            <section id="storePage" class="page active-page">
+
+                <div class="hero">
+
+                    <div class="hero-content">
+
+                        <span class="hero-label">
+                            ANTBYTE FEATURED
+                        </span>
+
+                        <h1>
+                            Build. Discover.<br>
+                            Download.
+                        </h1>
+
+                        <p>
+                            Discover applications created for the
+                            AntByte platform.
+                        </p>
+
+                        <button
+                            class="primary-button"
+                            id="exploreButton"
+                        >
+                            Explore Applications
+                        </button>
+
+                    </div>
+
+                    <div class="hero-art">
+                        <div class="orbit orbit-one"></div>
+                        <div class="orbit orbit-two"></div>
+                        <div class="hero-symbol">A</div>
+                    </div>
+
+                </div>
+
+
+                <!-- FEATURED -->
+                <section class="content-section">
+
+                    <div class="section-heading">
+                        <div>
+                            <h2>Featured</h2>
+                            <p>Popular applications on AntByte</p>
+                        </div>
+
+                        <button
+                            class="text-button"
+                            data-page-button="apps"
+                        >
+                            View all
+                        </button>
+                    </div>
+
+                    <div
+                        id="featuredGrid"
+                        class="app-grid"
+                    ></div>
+
+                </section>
+
+
+                <!-- CATEGORIES -->
+                <section class="content-section">
+
+                    <div class="section-heading">
+                        <div>
+                            <h2>Browse Categories</h2>
+                        </div>
+                    </div>
+
+                    <div class="category-grid">
+
+                        <button
+                            class="category-card"
+                            data-category="Development"
+                        >
+                            <span>⌘</span>
+                            <strong>Development</strong>
+                            <small>Tools for creators</small>
+                        </button>
+
+                        <button
+                            class="category-card"
+                            data-category="Education"
+                        >
+                            <span>◆</span>
+                            <strong>Education</strong>
+                            <small>Learn and study</small>
+                        </button>
+
+                        <button
+                            class="category-card"
+                            data-category="Productivity"
+                        >
+                            <span>▣</span>
+                            <strong>Productivity</strong>
+                            <small>Work smarter</small>
+                        </button>
+
+                        <button
+                            class="category-card"
+                            data-category="Games"
+                        >
+                            <span>◇</span>
+                            <strong>Games</strong>
+                            <small>Interactive experiences</small>
+                        </button>
+
+                    </div>
+
+                </section>
+
+
+                <!-- RECENT -->
+                <section class="content-section">
+
+                    <div class="section-heading">
+                        <div>
+                            <h2>Recently Added</h2>
+                        </div>
+                    </div>
+
+                    <div
+                        id="recentGrid"
+                        class="app-grid"
+                    ></div>
+
+                </section>
+
+            </section>
+
+
+            <!-- APPS PAGE -->
+            <section id="appsPage" class="page">
+
+                <div class="page-header">
+                    <span>ANTBYTE STORE</span>
+                    <h1>Applications</h1>
+                    <p>
+                        Explore applications available on AntByte.
+                    </p>
+                </div>
+
+                <div
+                    id="allAppsGrid"
+                    class="app-grid large-grid"
+                ></div>
+
+            </section>
+
+
+            <!-- LIBRARY PAGE -->
+            <section id="libraryPage" class="page">
+
+                <div class="page-header">
+                    <span>YOUR COLLECTION</span>
+                    <h1>Library</h1>
+                    <p>
+                        Applications you have downloaded.
+                    </p>
+                </div>
+
+                <div id="libraryContent" class="library-empty">
+
+                    <div class="empty-icon">
+                        A
+                    </div>
+
+                    <h2>Your library is empty</h2>
+
+                    <p>
+                        Download an application and it will appear here.
+                    </p>
+
+                    <button
+                        class="primary-button"
+                        data-page-button="apps"
+                    >
+                        Browse Applications
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- ABOUT -->
+            <section id="aboutPage" class="page">
+
+                <div class="page-header">
+                    <span>ABOUT ANTBYTE</span>
+
+                    <h1>
+                        One platform.<br>
+                        Many possibilities.
+                    </h1>
+
+                    <p>
+                        AntByte is a platform for discovering,
+                        distributing and launching applications.
+                    </p>
+                </div>
+
+                <div class="about-card">
+
+                    <div class="about-logo">
+                        A
+                    </div>
+
+                    <div>
+                        <h2>AntByte Platform</h2>
+
+                        <p>
+                            This is the AntByte application
+                            discovery platform. Applications can
+                            be listed, downloaded and managed
+                            through this interface.
+                        </p>
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+
+        <!-- APP DETAILS MODAL -->
+        <div
+            id="appModal"
+            class="modal hidden"
+        >
+
+            <div class="modal-background"></div>
+
+            <div class="app-modal">
+
+                <button
+                    id="closeModal"
+                    class="close-button"
+                >
+                    ×
+                </button>
+
+                <div
+                    id="modalIcon"
+                    class="modal-icon"
+                >
+                    A
+                </div>
+
+                <div class="modal-info">
+
+                    <span id="modalCategory">
+                        APPLICATION
+                    </span>
+
+                    <h1 id="modalTitle">
+                        Application
+                    </h1>
+
+                    <p id="modalDescription">
+                        Application description.
+                    </p>
+
+                    <div class="modal-meta">
+                        <span id="modalVersion">
+                            Version 1.0
+                        </span>
+
+                        <span id="modalSize">
+                            0 MB
+                        </span>
+                    </div>
+
+                    <div class="modal-actions">
+
+                        <a
+                            id="downloadButton"
+                            class="primary-button"
+                            href="#"
+                            download
+                        >
+                            Download
+                        </a>
+
+                        <button
+                            id="libraryButton"
+                            class="secondary-button"
+                        >
+                            Add to Library
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- FOOTER -->
+        <footer>
+
+            <div>
+                © 2026 AntByte
+            </div>
+
+            <div>
+                Application Platform
+            </div>
+
+        </footer>
+
+    </div>
+
+
+    <script src="app.js"></script>
+
+</body>
+</html>
